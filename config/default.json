@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://wegmanns:fvpx2ZEbQrqrm19s@cluster0.wteb2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongoURI": "mongodb+srv://wegmanns:fvpx2ZEbQrqrm19s@cluster0.wteb2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "jwtSecret" : "Harleythedog"
 }
