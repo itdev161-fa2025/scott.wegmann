@@ -1,11 +1,11 @@
 import express from 'express';
 import connectDatabase from './config/db';
-import { buildCheckFunction, check, validationResult } from 'express-validator';
+import {  check, validationResult } from 'express-validator';
 import cors from 'cors';
 import bcrypt from 'cors';
 import jwt from 'jsonwebtoken';
 import config from 'config';
-import user from './models/User';
+import User from './models/User';
 
 //Initialize express application
 const app = express();
@@ -72,18 +72,14 @@ async(req, res)=> {
         jwt.sign(
           payload,
           config.get('jwtSecret'),
-          { epiresIn: '10hr'},
+          { expiresIn: '10hr'},
           (err, token) => {
             if (err) throw err;
             res.json({token: token});
           }
         )
-
-
-
-        res.send('User successfully registered')
       } catch (error) {
-        res.status[500].send('server error')
+        res.status(500).send('server error')
       }
     }
 });
